@@ -12,3 +12,12 @@ parte4 = int(partes_do_ip[3])
 
 ip_int = (parte1 << 24) | (parte2 << 16) | (parte3 << 8) | parte4
 
+# Separa a mascara e converte a mascara para inteiro.
+parteMask = mask.split('.')
+mask_int = (int(parteMask[0]) << 24) | (int(parteMask[1]) << 16) | (int(parteMask[2]) << 8) | int(parteMask[3])
+
+
+# Calcula endereço da rede.
+network_int = ip_int & mask_int
+print(network_int)
+
